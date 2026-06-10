@@ -40,3 +40,6 @@ def parse_line(line: str, year: int = None) -> LogEntry | None:
         timestamp = datetime.strptime(f"{year} {ts_str}", "%Y %b %d %H:%M:%S")
     except ValueError:
         return None
+    for event_type, pattern in PATTERNS.items():
+        em = pattern.search(body)
+        if em:
