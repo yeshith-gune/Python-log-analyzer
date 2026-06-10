@@ -48,3 +48,8 @@ def parse_line(line: str, year: int = None) -> LogEntry | None:
             source_ip = groups[1] if len(groups) > 1 else None
             port = int(groups[2]) if len(groups) > 2 and groups[2] else None
             return LogEntry(
+                timestamp=timestamp,
+                hostname=hostname,
+                service=service,
+                pid=int(pid) if pid else None,
+                event=event_type,
