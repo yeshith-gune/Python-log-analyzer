@@ -53,3 +53,6 @@ def parse_line(line: str, year: int = None) -> LogEntry | None:
                 service=service,
                 pid=int(pid) if pid else None,
                 event=event_type,
+                username=username,
+                source_ip=source_ip,
+                port=port,
