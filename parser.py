@@ -37,3 +37,6 @@ def parse_line(line: str, year: int = None) -> LogEntry | None:
         return None
     ts_str, hostname, service, pid, body = m.groups()
     try:
+        timestamp = datetime.strptime(f"{year} {ts_str}", "%Y %b %d %H:%M:%S")
+    except ValueError:
+        return None
