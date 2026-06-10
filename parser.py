@@ -28,3 +28,10 @@ PATTERNS = {
         r'pam_unix\(\w+:\w+\): authentication failure;.*?user=(\S+)'
     ),
 }
+
+
+def parse_line(line: str, year: int = None) -> LogEntry | None:
+    year = year or datetime.now().year
+    m = SYSLOG_RE.match(line.strip())
+    if not m:
+        return None
