@@ -35,3 +35,5 @@ def parse_line(line: str, year: int = None) -> LogEntry | None:
     m = SYSLOG_RE.match(line.strip())
     if not m:
         return None
+    ts_str, hostname, service, pid, body = m.groups()
+    try:
