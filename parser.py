@@ -58,3 +58,8 @@ def parse_line(line: str, year: int = None) -> LogEntry | None:
                 port=port,
             )
     return None
+
+
+def parse_file(path: str) -> list[LogEntry]:
+    entries = []
+    year = datetime.now().year
