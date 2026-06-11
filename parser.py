@@ -65,3 +65,5 @@ def parse_file(path: str) -> list[LogEntry]:
     year = datetime.now().year
     with open(path, "r", errors="replace") as f:
         for line in f:
+            entry = parse_line(line, year)
+            if entry:
