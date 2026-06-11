@@ -67,3 +67,5 @@ def parse_file(path: str) -> list[LogEntry]:
         for line in f:
             entry = parse_line(line, year)
             if entry:
+                entries.append(entry)
+    return entries
