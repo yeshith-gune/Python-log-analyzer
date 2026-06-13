@@ -11,3 +11,6 @@ def aggregate(entries: list[LogEntry], window_minutes: int = 10) -> dict[str, At
     records: dict[str, AttackRecord] = {}
     # Bucket failures by IP
     ip_failures: dict[str, list[LogEntry]] = defaultdict(list)
+    for entry in entries:
+        if entry.event in ("failed", "invalid_user") and entry.source_ip:
+            ip_failures[entry.source_ip].append(entry)
