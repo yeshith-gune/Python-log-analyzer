@@ -16,3 +16,7 @@ def aggregate(entries: list[LogEntry], window_minutes: int = 10) -> dict[str, At
             ip_failures[entry.source_ip].append(entry)
 
     window = timedelta(minutes=window_minutes)
+
+    for ip, failures in ip_failures.items():
+        failures.sort(key=lambda e: e.timestamp)
+        usernames = [f.username for f in failures if f.username]
