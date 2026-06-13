@@ -14,3 +14,5 @@ def aggregate(entries: list[LogEntry], window_minutes: int = 10) -> dict[str, At
     for entry in entries:
         if entry.event in ("failed", "invalid_user") and entry.source_ip:
             ip_failures[entry.source_ip].append(entry)
+
+    window = timedelta(minutes=window_minutes)
