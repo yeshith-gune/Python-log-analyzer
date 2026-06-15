@@ -28,3 +28,6 @@ def aggregate(entries: list[LogEntry], window_minutes: int = 10) -> dict[str, At
                 f for f in failures[i:]
                 if f.timestamp <= window_end
             ]
+            rate = len(in_window) / window_minutes
+            if rate > peak_rate:
+                peak_rate = rate
