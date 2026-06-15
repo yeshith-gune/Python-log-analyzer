@@ -35,3 +35,5 @@ def aggregate(entries: list[LogEntry], window_minutes: int = 10) -> dict[str, At
             source_ip=ip,
             failed_count=len(failures),
             distinct_users=set(usernames),
+            first_seen=failures[0].timestamp,
+            last_seen=failures[-1].timestamp,
