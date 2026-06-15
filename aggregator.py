@@ -31,3 +31,5 @@ def aggregate(entries: list[LogEntry], window_minutes: int = 10) -> dict[str, At
             rate = len(in_window) / window_minutes
             if rate > peak_rate:
                 peak_rate = rate
+        records[ip] = AttackRecord(
+            source_ip=ip,
