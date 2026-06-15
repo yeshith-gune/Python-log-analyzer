@@ -40,3 +40,4 @@ def aggregate(entries: list[LogEntry], window_minutes: int = 10) -> dict[str, At
             burst_score=round(peak_rate, 2),
             usernames_tried=usernames,
         )
+    return records
