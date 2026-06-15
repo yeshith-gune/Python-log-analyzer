@@ -20,3 +20,7 @@ def aggregate(entries: list[LogEntry], window_minutes: int = 10) -> dict[str, At
     for ip, failures in ip_failures.items():
         failures.sort(key=lambda e: e.timestamp)
         usernames = [f.username for f in failures if f.username]
+# Sliding window for peak burst rate
+        peak_rate = 0.0
+        for i, failure in enumerate(failures):
+            window_end = failure.timestamp + window
