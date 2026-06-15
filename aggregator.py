@@ -24,3 +24,7 @@ def aggregate(entries: list[LogEntry], window_minutes: int = 10) -> dict[str, At
         peak_rate = 0.0
         for i, failure in enumerate(failures):
             window_end = failure.timestamp + window
+            in_window = [
+                f for f in failures[i:]
+                if f.timestamp <= window_end
+            ]
