@@ -37,3 +37,6 @@ def aggregate(entries: list[LogEntry], window_minutes: int = 10) -> dict[str, At
             distinct_users=set(usernames),
             first_seen=failures[0].timestamp,
             last_seen=failures[-1].timestamp,
+            burst_score=round(peak_rate, 2),
+            usernames_tried=usernames,
+        )
