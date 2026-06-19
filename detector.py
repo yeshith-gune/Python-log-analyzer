@@ -9,3 +9,6 @@ THRESHOLDS = {
     "distinct_users_low":  3,    # credential stuffing starts here
     "distinct_users_high": 10,   # definite user enumeration
 }
+def score_record(record: AttackRecord) -> AttackRecord:
+    T = THRESHOLDS
+    severity = "low"
