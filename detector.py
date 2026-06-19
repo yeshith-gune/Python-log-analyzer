@@ -9,6 +9,12 @@ THRESHOLDS = {
     "distinct_users_low":  3,    # credential stuffing starts here
     "distinct_users_high": 10,   # definite user enumeration
 }
+
+
 def score_record(record: AttackRecord) -> AttackRecord:
     T = THRESHOLDS
     severity = "low"
+
+    # Rule 1: total failure count
+    if record.failed_count >= T["min_failures_high"]:
+        severity = "high"
