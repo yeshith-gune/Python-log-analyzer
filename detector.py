@@ -28,3 +28,6 @@ def score_record(record: AttackRecord) -> AttackRecord:
         severity = max_severity(severity, "high")
     elif record.burst_score >= T["burst_rate_medium"]:
         severity = max_severity(severity, "medium")
+
+    # Rule 3: credential stuffing (many distinct users)
+    if len(record.distinct_users) >= T["distinct_users_high"]:
