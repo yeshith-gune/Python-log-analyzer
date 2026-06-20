@@ -22,3 +22,6 @@ def score_record(record: AttackRecord) -> AttackRecord:
         severity = "medium"
     elif record.failed_count < T["min_failures_low"]:
         severity = "low"
+
+    # Rule 2: escalate on burst rate
+    if record.burst_score >= T["burst_rate_high"]:
