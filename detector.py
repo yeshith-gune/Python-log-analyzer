@@ -20,3 +20,5 @@ def score_record(record: AttackRecord) -> AttackRecord:
         severity = "high"
     elif record.failed_count >= T["min_failures_medium"]:
         severity = "medium"
+    elif record.failed_count < T["min_failures_low"]:
+        severity = "low"
