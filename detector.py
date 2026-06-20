@@ -25,3 +25,5 @@ def score_record(record: AttackRecord) -> AttackRecord:
 
     # Rule 2: escalate on burst rate
     if record.burst_score >= T["burst_rate_high"]:
+        severity = max_severity(severity, "high")
+    elif record.burst_score >= T["burst_rate_medium"]:
