@@ -31,3 +31,4 @@ def score_record(record: AttackRecord) -> AttackRecord:
 
     # Rule 3: credential stuffing (many distinct users)
     if len(record.distinct_users) >= T["distinct_users_high"]:
+        severity = "critical"       # override — strong signal
