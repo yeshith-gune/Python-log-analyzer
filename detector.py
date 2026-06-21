@@ -34,3 +34,6 @@ def score_record(record: AttackRecord) -> AttackRecord:
         severity = "critical"       # override — strong signal
     elif len(record.distinct_users) >= T["distinct_users_low"]:
         severity = max_severity(severity, "medium")
+
+    record.severity = severity
+    return record
