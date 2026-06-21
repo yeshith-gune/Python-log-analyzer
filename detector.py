@@ -41,3 +41,7 @@ def score_record(record: AttackRecord) -> AttackRecord:
 
 def _severity_rank(s: str) -> int:
     return {"low": 0, "medium": 1, "high": 2, "critical": 3}[s]
+
+
+def max_severity(a: str, b: str) -> str:
+    return a if _severity_rank(a) >= _severity_rank(b) else b
