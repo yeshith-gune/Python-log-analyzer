@@ -37,3 +37,7 @@ def score_record(record: AttackRecord) -> AttackRecord:
 
     record.severity = severity
     return record
+
+
+def _severity_rank(s: str) -> int:
+    return {"low": 0, "medium": 1, "high": 2, "critical": 3}[s]
