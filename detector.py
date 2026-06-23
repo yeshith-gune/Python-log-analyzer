@@ -49,3 +49,5 @@ def max_severity(a: str, b: str) -> str:
 
 def detect(records: dict[str, AttackRecord],
            min_severity: str = "low") -> list[AttackRecord]:
+    scored = [score_record(r) for r in records.values()]
+    rank = _severity_rank(min_severity)
