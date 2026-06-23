@@ -51,3 +51,5 @@ def detect(records: dict[str, AttackRecord],
            min_severity: str = "low") -> list[AttackRecord]:
     scored = [score_record(r) for r in records.values()]
     rank = _severity_rank(min_severity)
+    filtered = [r for r in scored if _severity_rank(r.severity) >= rank]
+    return sorted(filtered, key=lambda r: _severity_rank(r.severity), reverse=True)
