@@ -45,3 +45,7 @@ def _severity_rank(s: str) -> int:
 
 def max_severity(a: str, b: str) -> str:
     return a if _severity_rank(a) >= _severity_rank(b) else b
+
+
+def detect(records: dict[str, AttackRecord],
+           min_severity: str = "low") -> list[AttackRecord]:
