@@ -9,3 +9,4 @@ SEVERITY_COLOR = {
     "high":     "\033[31m",   # red
     "critical": "\033[31;1m",  # bold red
 }
+RESET = "\033[0m"
