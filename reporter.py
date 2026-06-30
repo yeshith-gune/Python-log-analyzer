@@ -10,3 +10,4 @@ SEVERITY_COLOR = {
     "critical": "\033[31;1m",  # bold red
 }
 RESET = "\033[0m"
+def _fmt_dt(dt: datetime | None) -> str:
