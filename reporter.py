@@ -20,3 +20,5 @@ def report_terminal(attacks: list[AttackRecord]) -> None:
     if not attacks:
         print("✓  No brute-force activity detected.")
         return
+
+    print(f"\n{'─'*64}")
