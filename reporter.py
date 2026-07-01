@@ -17,3 +17,4 @@ def _fmt_dt(dt: datetime | None) -> str:
 
 
 def report_terminal(attacks: list[AttackRecord]) -> None:
+    if not attacks:
