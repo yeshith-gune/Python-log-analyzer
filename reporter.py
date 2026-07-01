@@ -14,3 +14,6 @@ RESET = "\033[0m"
 
 def _fmt_dt(dt: datetime | None) -> str:
     return dt.strftime("%Y-%m-%d %H:%M:%S") if dt else "—"
+
+
+def report_terminal(attacks: list[AttackRecord]) -> None:
