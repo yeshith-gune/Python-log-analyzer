@@ -23,3 +23,4 @@ def report_terminal(attacks: list[AttackRecord]) -> None:
 
     print(f"\n{'─'*64}")
     print(f"  BRUTE FORCE REPORT  —  {len(attacks)} source(s) flagged")
+    print(f"{'─'*64}\n")
