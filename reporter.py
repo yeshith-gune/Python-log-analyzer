@@ -35,3 +35,4 @@ def report_terminal(attacks: list[AttackRecord]) -> None:
 
         print(f"  {color}[{a.severity.upper():8s}]{RESET}  {a.source_ip}")
         print(f"             Failures : {a.failed_count}")
+        print(f"          Burst rate  : {a.burst_score} failures/min")
