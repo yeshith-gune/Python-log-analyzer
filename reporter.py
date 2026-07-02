@@ -41,3 +41,6 @@ def report_terminal(attacks: list[AttackRecord]) -> None:
         print(
             f"          Time range  : {_fmt_dt(a.first_seen)} → {_fmt_dt(a.last_seen)}  ({duration} min)")
         print()
+
+
+def report_json(attacks: list[AttackRecord]) -> str:
