@@ -26,3 +26,4 @@ def report_terminal(attacks: list[AttackRecord]) -> None:
     print(f"{'─'*64}\n")
 
     for a in attacks:
+        color = SEVERITY_COLOR.get(a.severity, "")
