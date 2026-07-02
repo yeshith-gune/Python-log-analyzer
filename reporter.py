@@ -44,3 +44,4 @@ def report_terminal(attacks: list[AttackRecord]) -> None:
 
 
 def report_json(attacks: list[AttackRecord]) -> str:
+    def record_to_dict(a: AttackRecord) -> dict:
