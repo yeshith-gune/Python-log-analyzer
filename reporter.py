@@ -34,3 +34,4 @@ def report_terminal(attacks: list[AttackRecord]) -> None:
             top_users += f" (+{len(a.distinct_users)-5} more)"
 
         print(f"  {color}[{a.severity.upper():8s}]{RESET}  {a.source_ip}")
+        print(f"             Failures : {a.failed_count}")
