@@ -32,3 +32,5 @@ def report_terminal(attacks: list[AttackRecord]) -> None:
         top_users = ", ".join(list(a.distinct_users)[:5])
         if len(a.distinct_users) > 5:
             top_users += f" (+{len(a.distinct_users)-5} more)"
+
+        print(f"  {color}[{a.severity.upper():8s}]{RESET}  {a.source_ip}")
