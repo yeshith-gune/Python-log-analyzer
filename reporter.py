@@ -29,3 +29,4 @@ def report_terminal(attacks: list[AttackRecord]) -> None:
         color = SEVERITY_COLOR.get(a.severity, "")
         duration = (
             a.last_seen - a.first_seen).seconds // 60 if a.first_seen else 0
+        top_users = ", ".join(list(a.distinct_users)[:5])
