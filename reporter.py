@@ -40,3 +40,4 @@ def report_terminal(attacks: list[AttackRecord]) -> None:
             f"        Distinct users: {len(a.distinct_users)}  ({top_users})")
         print(
             f"          Time range  : {_fmt_dt(a.first_seen)} → {_fmt_dt(a.last_seen)}  ({duration} min)")
+        print()
