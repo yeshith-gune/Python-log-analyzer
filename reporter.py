@@ -48,3 +48,4 @@ def report_json(attacks: list[AttackRecord]) -> str:
         return {
             "ip": a.source_ip,
             "severity": a.severity,
+            "failed_count": a.failed_count,
