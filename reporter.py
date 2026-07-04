@@ -50,3 +50,4 @@ def report_json(attacks: list[AttackRecord]) -> str:
             "severity": a.severity,
             "failed_count": a.failed_count,
             "burst_score": a.burst_score,
+            "distinct_users": sorted(a.distinct_users),
