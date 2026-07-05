@@ -58,3 +58,4 @@ def report_json(attacks: list[AttackRecord]) -> str:
 
 
 def report_csv(attacks: list[AttackRecord]) -> str:
+    buf = io.StringIO()
