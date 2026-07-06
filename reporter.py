@@ -65,3 +65,4 @@ def report_csv(attacks: list[AttackRecord]) -> str:
     writer.writeheader()
     for a in attacks:
         writer.writerow({
+            "ip": a.source_ip,
