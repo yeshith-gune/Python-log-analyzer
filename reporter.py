@@ -67,3 +67,4 @@ def report_csv(attacks: list[AttackRecord]) -> str:
         writer.writerow({
             "ip": a.source_ip,
             "severity": a.severity,
+            "failed_count": a.failed_count,
