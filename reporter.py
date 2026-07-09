@@ -69,3 +69,4 @@ def report_csv(attacks: list[AttackRecord]) -> str:
             "severity": a.severity,
             "failed_count": a.failed_count,
             "burst_score": a.burst_score,
+            "distinct_users": len(a.distinct_users),
