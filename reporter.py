@@ -71,3 +71,4 @@ def report_csv(attacks: list[AttackRecord]) -> str:
             "burst_score": a.burst_score,
             "distinct_users": len(a.distinct_users),
             "first_seen": _fmt_dt(a.first_seen),
+            "last_seen": _fmt_dt(a.last_seen),
