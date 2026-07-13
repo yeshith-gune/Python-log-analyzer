@@ -73,3 +73,4 @@ def report_csv(attacks: list[AttackRecord]) -> str:
             "first_seen": _fmt_dt(a.first_seen),
             "last_seen": _fmt_dt(a.last_seen),
         }
+    return json.dumps([record_to_dict(a) for a in attacks], indent=2)
