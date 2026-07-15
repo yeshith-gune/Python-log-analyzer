@@ -78,3 +78,4 @@ def report_csv(attacks: list[AttackRecord]) -> str:
 def report_csv(attacks: list[AttackRecord]) -> str:
     buf=io.StringIO()
         fields=["ip", "severity", "failed_count", "burst_score",
+              "distinct_users", "first_seen", "last_seen"]
