@@ -76,3 +76,4 @@ def report_csv(attacks: list[AttackRecord]) -> str:
     return json.dumps([record_to_dict(a) for a in attacks], indent=2)
 
 def report_csv(attacks: list[AttackRecord]) -> str:
+    buf=io.StringIO()
