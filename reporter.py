@@ -81,3 +81,4 @@ def report_csv(attacks: list[AttackRecord]) -> str:
               "distinct_users", "first_seen", "last_seen"]
     writer=csv.DictWriter(buf, fieldnames=fields)
     writer.writeheader()
+    for a in attacks:
