@@ -5,3 +5,4 @@ from parser import parse_file
 from aggregator import aggregate
 from detector import detect
 from reporter import report_terminal, report_json, report_csv
+def main():
