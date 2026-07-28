@@ -72,16 +72,5 @@ def report_csv(attacks: list[AttackRecord]) -> str:
             "distinct_users": len(a.distinct_users),
             "first_seen": _fmt_dt(a.first_seen),
             "last_seen": _fmt_dt(a.last_seen),
-        }
-    return json.dumps([record_to_dict(a) for a in attacks], indent=2)
-
-def report_csv(attacks: list[AttackRecord]) -> str:
-    buf=io.StringIO()
-        fields=["ip", "severity", "failed_count", "burst_score",
-              "distinct_users", "first_seen", "last_seen"]
-    writer=csv.DictWriter(buf, fieldnames=fields)
-    writer.writeheader()
-    for a in attacks:
-        writer.writerow({
-            "ip": a.source_ip,
-            "severity": a.severity,
+        })
+        return buf.getvalue()
