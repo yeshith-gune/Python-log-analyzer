@@ -2,3 +2,4 @@
 import argparse
 import sys
 from parser import parse_file
+from aggregator import aggregate
