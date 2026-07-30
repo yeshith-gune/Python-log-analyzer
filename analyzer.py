@@ -19,3 +19,6 @@ def main():
     cli.add_argument("--window", type=int, default=10,
                      help="Sliding window in minutes for burst detection (default: 10)")
     args = cli.parse_args()
+
+    # Parse
+    if args.logfile == "-":
