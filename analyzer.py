@@ -22,3 +22,4 @@ def main():
 
     # Parse
     if args.logfile == "-":
+        from parser import parse_line
