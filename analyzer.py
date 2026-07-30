@@ -14,3 +14,5 @@ def main():
     cli.add_argument("logfile", help="Path to auth.log (or '-' for stdin)")
     cli.add_argument("--format", choices=["terminal", "json", "csv"],
                      default="terminal")
+    cli.add_argument("--severity", choices=["low", "medium", "high", "critical"],
+                     default="low", help="Minimum severity to report")
